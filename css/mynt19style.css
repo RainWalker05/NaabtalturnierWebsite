@@ -1,0 +1,371 @@
+/* Autor: Gerhard Morgner, E-Mail: webmaster@naabtalturnier.de */
+html,
+body,
+header,
+footer,
+section,
+nav,
+div,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td {
+  /* Reset */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: white;
+  background: black;
+  font: 98% "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+body {
+  max-width: 1120px;
+  min-width: 1040px;
+  margin: 10px auto 0;
+  padding: 0.5em 0.5em 0;
+  border: medium solid white;
+  color: #ccc;
+  background: #300;
+}
+
+footer {
+  display: block;
+  clear: both;
+  font-size: x-small;
+  text-align: right;
+}
+
+section {
+  display: block;
+  padding: 2em;
+  min-height: 600px;
+}
+
+section p {
+  margin-bottom: 1em;
+  line-height: 140%;
+}
+
+section li {
+  margin: 2em 0;
+  line-height: 140%;
+}
+
+section#kitchen {
+  background-image: url("./img/tennisgericht.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  font: normal normal bold 130%/120% "Comic Sans MS", sans-serif;
+  text-align: center;
+}
+
+header {
+  display: block;
+}
+
+nav {
+  /* Men� allgemein */
+  display: block;
+  font-size: 80%;
+  font-weight: bold;
+}
+
+nav p {
+  clear: left;
+}
+
+/* wozu?
+nav img {
+	display: block;
+	border-style: none;
+	width: 100%;
+	height: 70px;
+	} */
+nav ul {
+  /* Hauptmen�liste */
+  background: #333;
+  height: 35px;
+  list-style: none;
+}
+
+nav li {
+  /* Hauptmen�punkt */
+  float: left;
+}
+
+nav li a {
+  /* Link im Hauptmen�punkt */
+  background: #333 url(img/seperator.gif) bottom right no-repeat;
+  color: #ccc;
+  display: block;
+  font-weight: normal;
+  line-height: 35px;
+  padding: 0 25px;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav li a:hover,
+nav ul li:hover a {
+  /* Hover-Link im Hauptmen�punkt + Link im Hover-Men�punkt der Hauptmen�liste */
+  background: #2580a2 url(img/hover.gif) bottom center no-repeat;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav li ul {
+  /* Untermen�liste eines Hauptmen�punkts */
+  display: none;
+  /* ausgeblendet */
+  background: #333;
+  height: auto;
+  border-style: none;
+  position: absolute;
+  width: 150px;
+  z-index: 200;
+  /* top:1em; left:0; */
+}
+
+nav li:hover ul {
+  /* Untermen�liste eines Hover-Hauptmen�punkts */
+  display: block;
+  /* eingeblendet, d.h. Untermen� klappt auf */
+}
+
+nav li li {
+  /* Untermen�punkt */
+  background: url(img/sub_sep.gif) bottom left no-repeat;
+  display: block;
+  float: none;
+  width: 150px;
+}
+
+nav li:hover li a {
+  /* Link im Untermen�punkt eines Hover-Hauptmen�punkts */
+  background: none;
+}
+
+nav li ul a {
+  /* Link der Untermen�liste eines Hauptmen�punkts */
+  display: block;
+  height: 35px;
+  font-size: 12px;
+  font-style: normal;
+  padding: 0 10px 0 15px;
+  text-align: left;
+}
+
+nav li ul a:hover,
+nav li ul li:hover a {
+  /* Hover-Link der Untermen�liste eines Hauptmen�punkts + Link im Hover-Untermen�punkt der Untermen�liste eines Hauptmen�punkts */
+  background: #2580a2 url(img/hover_sub.gif) center left no-repeat;
+  border-style: none;
+  color: #fff;
+  text-decoration: none;
+}
+
+img {
+  border-style: none;
+}
+
+h1 {
+  font-size: 140%;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+
+h6 {
+  font: normal normal bold 240%/180% "Comic Sans MS", sans-serif;
+  text-align: center;
+  margin: -1em 0 0 0;
+}
+
+small {
+  font-size: xx-small;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  width: 100%;
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+@media (max-width: 1040px) {
+
+  /* Responsive layout */
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+div#gallery {
+  /* Fotoalbum */
+  float: left;
+}
+
+div#gallery img {
+  display: inline;
+  width: 200px;
+  height: 133px;
+  margin: 2px;
+  border: 1px solid #666;
+}
+
+div#gallery a:hover img {
+  border: 1px solid #fff;
+}
+
+div#zoom {
+  /* Foto Gro�ansicht */
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+div#zoom img {
+  margin-top: 10px;
+  width: 800px;
+  height: 533px;
+  border: 1px solid #666;
+}
+
+table {
+  /* Tabelle ohne Rahmen und automatischer Spaltenbreite */
+  table-layout: auto;
+  /* autom. Spaltenbreite, d.h. je nach Zelleninhalt */
+  border-style: none;
+  margin-left: 2em;
+  margin-bottom: 2em;
+}
+
+table td {
+  padding: 1em 3em;
+}
+
+table td a {
+  text-decoration: none;
+}
+
+table#infos {
+  /* Turnierausschreibung im Tabellenlayout ohne Rahmen */
+  table-layout: auto;
+  /* autom. Spaltenbreite, d.h. je nach Zelleninhalt */
+  border-style: none;
+  margin: 0 0 2em;
+  padding: 0;
+}
+
+table#infos th {
+  text-align: right;
+  vertical-align: text-top;
+}
+
+table#kitchen {
+  /* Speisekarte im Tabellenlayout ohne Rahmen */
+  table-layout: auto;
+  /* autom. Spaltenbreite, d.h. je nach Zelleninhalt */
+  border-style: none;
+  text-align: left;
+  width:100%;
+  margin: 0;
+}
+
+table#kitchen td {
+  padding: 1em 3em;
+}
+
+table#winner {
+  /* Tabelle der bisherigen Naabtalturniersieger */
+  table-layout: auto;
+  /* autom. Spaltenbreite, d.h. je nach Zelleninhalt */
+  border-collapse: collapse;
+  border: thin solid white;
+  margin: 1em auto 2em;
+}
+
+table#winner th,
+table#winner td {
+  border: thin solid white;
+  padding: 0.5em 1.5em;
+}
+
+table#winner th {
+  font-weight: bolder;
+  text-align: left;
+}
+
+table#impressum {
+  /* Impressum im Tabellenlayout ohne Rahmen */
+  table-layout: fixed;
+  width: 100%;
+  border-style: none;
+  margin: 0;
+}
+
+table#impressum th {
+  text-align: left;
+  vertical-align: text-top;
+}
+
+table#impressum td {
+  text-align: left;
+  vertical-align: text-top;
+  padding: 0 2em 2em 0;
+}
+
+a:link {
+  color: #ccc;
+  text-decoration: underline;
+  outline: none;
+}
+
+a:visited {
+  color: #666;
+  text-decoration: underline;
+  outline: none;
+}
+
+a:focus {
+  color: #ccc;
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  color: #2580a2;
+  text-decoration: none;
+  outline: none;
+}
+
+a:active {
+  color: #2580a2;
+  text-decoration: none;
+  outline: none;
+}
+

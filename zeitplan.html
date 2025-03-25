@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <!-- Autor: Gerhard Morgner, E-Mail: webmaster@naabtalturnier.de -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" lang="de" content="Aktueller Zeitplan und Termine zum Ansehen oder Herunterladen">
+  <meta name="keywords" lang="de" content="Tennis,Naabtalturnier,Turnierinfos,Turniersieger,Auslosung,Tableaus,Zeitplan,Spielplan,Terminplan,Terminliste,Termine,Sieger,Fotos,Historie,TVB,Turnverein,Burglengenfeld,Städtedreieck,Naabtal">
+  <link rel="stylesheet" href="./css/mynt19style.css" media="screen">
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <title>Zeitplan - 41. Naabtalturnier 2019</title>
+</head>
+
+<body>
+  <header>
+    <img src="./img/banner.jpg" height=80 width=100% alt="Logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="#">Aktuelles</a>
+          <ul>
+            <li><a href="turnier.html">... zum Turnier</a></li>
+            <li><a href="kueche.html">... aus der Küche</a></li>
+          </ul>
+        </li>
+        <li><a href="tableaus.html">Tableaus</a>
+          <ul>
+            <li><a href="einzel.html">Einzeldisziplinen</a></li>
+            <li><a href="doppel.html">Doppeldisziplinen</a></li>
+          </ul>
+        </li>
+        <li><a href="zeitplan.html">Zeitplan</a></li>
+        <li><a href="#">Fotoalbum</a></li>
+        <li><a href="sieger.html">Turniersieger</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <h1>ZEITPLAN</h1>
+
+    <label for="tag">Wähle einen Tag:</label>
+    <select id="tag" onchange="zeigeBild()">
+        <option value="">Bitte wähle einen Tag</option>
+        <option value="montag">Montag</option>
+        <option value="dienstag">Dienstag</option>
+        <option value="mittwoch">Mittwoch</option>
+        <option value="donnerstag">Donnerstag</option>
+        <option value="freitag">Freitag</option>
+        <option value="samstag">Samstag</option>
+        <option value="sonntag">Sonntag</option>
+    </select>
+
+    <!-- Bildcontainer -->
+    <img id="zeitplanBild" src="/img/Donnerstag.png" alt="Zeitplan" width="1000" style="margin-top: 20px;">
+
+    <!-- Nachricht über die letzte Aktualisierung -->
+    <p id="updateMessage" style="color: #555; font-size: 14px; text-align: right; margin-top: 20px;">
+      Zuletzt aktualisiert am: 25.03.2025, 14:33
+    </p>
+   <p><b>Hinweis:</b><br>Die Zeitpläne werden täglich aktualisiert und ca. 21:30 Uhr hier auf dieser Seite online gestellt.</p>
+  </section>
+</body>
+
+<script>
+  function zeigeBild() {
+      // Das ausgewählte Datum aus dem Dropdown holen
+      let tag = document.getElementById("tag").value;
+  
+      // Objekt mit Tag-Bild-Zuordnung
+      let bilder = {
+          "montag": "montag.jpg",
+          "dienstag": "dienstag.jpg",
+          "mittwoch": "mittwoch.jpg",
+          "donnerstag": "./img/Donnerstag.png",
+          "freitag": "freitag.jpg",
+          "samstag": "./img/Samstag.png",
+          "sonntag": "sonntag.jpg"
+      };
+  
+      // Bild entsprechend dem ausgewählten Tag setzen (falls kein Tag ausgewählt, bleibt das Bild unverändert)
+    let bild = bilder[tag] || "kein_plan.jpg"; // Fallback-Bild, wenn nichts ausgewählt ist
+    document.getElementById("zeitplanBild").src = bild;
+
+    // Aktuelles Datum und Uhrzeit holen
+    let jetzt = new Date();
+    let datumUhrzeit = jetzt.toLocaleString(); // Gibt das Datum und die Uhrzeit in lokalem Format zurück
+
+    // Die Nachricht mit dem Aktualisierungsdatum und der Uhrzeit anzeigen
+    let message = `Das Bild wurde zuletzt aktualisiert am: ${datumUhrzeit}`;
+    document.getElementById("updateMessage").innerText = message;
+  }
+  </script>
+  
+  
+
+</html>
